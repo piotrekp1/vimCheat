@@ -1,0 +1,16 @@
+#!/bin/bash
+VIM_CHEAT_LOCATION="$HOME/Programs/VimCheat"
+PICT_DEP_LOC="img"
+
+USAGE="USAGE [ vimCheat m ] where m is cheat sheet number [1-7]"
+FILE_NAME="vi-vim-tutorial-"
+FILE_FORMAT=".gif"
+
+if [ $# -eq 1 ] && [[ $1 =~ ^[1-7]$ ]];
+then 
+	eog $VIM_CHEAT_LOCATION/$PICT_DEP_LOC/${FILE_NAME}$1${FILE_FORMAT} > /dev/null 2>&1 &
+else
+	echo $USAGE
+fi
+
+
